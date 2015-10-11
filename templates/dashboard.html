@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Dashboard | AOJOI</title>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/dashboard.css">
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">AOJOI (Beta)</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="https://github.com/zakuro9715/aojoi">Fork me on Github</a>
+          </nav>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <h1>Dashboard</h1>
+          <table class="dashboard mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>ID</th>
+                <th class="mdl-data-table__cell--non-numeric">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{range .Problems}}
+              <tr>
+                <td>{{.Level}}</td>
+                <td>{{.Id}}</td>
+                <td class="mdl-data-table__cell--non-numeric"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id={{.Id}}">{{.Name}}</a></td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Contact me on <a href="https://twitter.com/zakuro9715">twitter</a></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

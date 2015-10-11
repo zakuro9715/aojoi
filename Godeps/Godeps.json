@@ -1,0 +1,15 @@
+{
+	"ImportPath": "github.com/zakuro9715/aojoi",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/zakuro9715/aojgo",
+			"Rev": "a0ff2fa605f3ffdde4bf5cbc2339795c17667517"
+		},
+		{
+			"ImportPath": "github.com/zenazn/goji",
+			"Comment": "v0.9.0-29-g46b46e0",
+			"Rev": "46b46e00f46dda650e04f0bceeb7c40732cd5988"
+		}
+	]
+}
