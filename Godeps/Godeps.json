@@ -1,15 +1,13 @@
 {
 	"ImportPath": "github.com/zakuro9715/aojoi",
 	"GoVersion": "go1.4.2",
+	"Packages": [
+		"github.com/zakuro9715/aojgo"
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/zakuro9715/aojgo",
-			"Rev": "a0ff2fa605f3ffdde4bf5cbc2339795c17667517"
-		},
-		{
-			"ImportPath": "github.com/zenazn/goji",
-			"Comment": "v0.9.0-29-g46b46e0",
-			"Rev": "46b46e00f46dda650e04f0bceeb7c40732cd5988"
+			"Rev": "f4b2bbb8fd0d8b933614d7ae5ad9f9a6ea43cfd5"
 		}
 	]
 }
