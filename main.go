@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/zakuro9715/aojgo"
 	"github.com/zenazn/goji"
-	"github.com/zenazn/goji/web"
 	"html/template"
 	"net/http"
 	"sort"
@@ -46,7 +45,7 @@ func checkIsSolved(userId, problemId string) bool {
 	return len(r) > 0
 }
 
-func showDashboard(c web.C, w http.ResponseWriter, r *http.Request) {
+func showDashboard(w http.ResponseWriter, r *http.Request) {
 	rawProblems5, _ := aoj.ProblemListSearchApi(5)
 	rawProblems6, _ := aoj.ProblemListSearchApi(6)
 
