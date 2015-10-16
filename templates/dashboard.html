@@ -23,6 +23,7 @@
           <table class="dashboard mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
               <tr>
+                <th></th>
                 <th>Level</th>
                 <th>ID</th>
                 <th class="mdl-data-table__cell--non-numeric">Name</th>
@@ -30,7 +31,16 @@
             </thead>
             <tbody>
               {{range .Problems}}
+              {{if .Solved}}
+              <tr style="background-color: #eee;">
+                <td class="mdl-data-table__cell--non-numeric">
+                  <div id="solved-{{.Id}}" class="icon material-icons">done</div>
+                  <div class="mdl-tooltip" for="solved-{{.Id}}">Solved!</div>
+                </td>
+              {{else}}
               <tr>
+                <td class="mdl-data-table__cell--non-numeric"></td>
+              {{end}}
                 <td>{{.Level}}</td>
                 <td>{{.Id}}</td>
                 <td class="mdl-data-table__cell--non-numeric"><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id={{.Id}}">{{.Name}}</a></td>

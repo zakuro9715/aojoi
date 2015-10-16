@@ -41,6 +41,11 @@ func newProblemFromAoj(p aoj.Problem) *Problem {
 	return np
 }
 
+func checkIsSolved(userId, problemId string) bool {
+	r, _ := aoj.SolvedRecordSearchApi(userId, problemId, "", -1, -1)
+	return len(r) > 0
+}
+
 func showDashboard(c web.C, w http.ResponseWriter, r *http.Request) {
 	rawProblems5, _ := aoj.ProblemListSearchApi(5)
 	rawProblems6, _ := aoj.ProblemListSearchApi(6)
@@ -53,6 +58,13 @@ func showDashboard(c web.C, w http.ResponseWriter, r *http.Request) {
 		problems[len(rawProblems5)+i] = *newProblemFromAoj(p)
 	}
 	sort.Sort(ProblemList(problems))
+
+	userId := r.URL.Query().Get("userId")
+	if len(userId) > 0 {
+		for i, p := range problems {
+			problems[i].Solved = checkIsSolved(userId, p.Id)
+		}
+	}
 
 	data := struct {
 		Problems []Problem
