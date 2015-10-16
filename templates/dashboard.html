@@ -20,6 +20,13 @@
       <main class="mdl-layout__content">
         <div class="page-content">
           <h1>Dashboard</h1>
+          <form method="GET" action="/dashboard">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="userId" name="userId" value="{{.UserId}}"/>
+              <label class="mdl-textfield__label" for="userId">User ID</label>
+            </div>
+            <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="表示"/>
+          </form>
           <table class="dashboard mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
               <tr>

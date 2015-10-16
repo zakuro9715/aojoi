@@ -68,8 +68,10 @@ func showDashboard(c web.C, w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Problems []Problem
+		UserId   string
 	}{
 		problems,
+		userId,
 	}
 	t.Execute(w, data)
 }
